@@ -24,8 +24,11 @@
         <developer>
             <name>Marciel de Sousa</name>
         </developer>
-    </developers>       
-    
+    </developers>
+    <modules>
+        <module>blogsoon-core</module>
+        <module>blogsoon-manager</module>
+    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
