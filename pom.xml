@@ -28,7 +28,8 @@
     <modules>
         <module>blogsoon-core</module>
         <module>blogsoon-manager</module>
-    </modules>
+    <module>BlogSoon-WebApp</module>
+  </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
