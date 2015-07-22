@@ -18,7 +18,7 @@
     for the index controller we are using ParameterizableViewController, so we must
     define an explicit mapping for it.
     -->
-    <context:component-scan base-package="br.edu.ifpb.bdnc.blogsoon.controller" />
+    <context:component-scan base-package="br.edu.ifpb.bdnc.blogsoon" />
     
     
 <!--    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">

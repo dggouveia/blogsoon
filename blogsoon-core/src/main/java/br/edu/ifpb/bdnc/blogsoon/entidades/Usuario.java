@@ -30,6 +30,9 @@ public class Usuario implements Serializable {
     @NotEmpty(message = "A senha está vazia")
     private String senha; 
     
+ 
+    
+    
 
     public long getId() {
         return id;

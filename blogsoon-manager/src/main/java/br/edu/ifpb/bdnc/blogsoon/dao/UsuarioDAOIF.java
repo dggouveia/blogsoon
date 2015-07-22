@@ -6,6 +6,7 @@
 package br.edu.ifpb.bdnc.blogsoon.dao;
 
 import br.edu.ifpb.bdnc.blogsoon.entidades.Usuario;
+import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -13,5 +14,5 @@ import org.springframework.data.repository.CrudRepository;
  * @author Emanuel Batista da Silva Filho - emanuelbatista2011@gmail.com
  */
 public interface UsuarioDAOIF extends CrudRepository<Usuario, Long>{
-    
+    List<Usuario> findBynome(String nome);
 }
