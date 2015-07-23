@@ -6,7 +6,8 @@
 package br.edu.ifpb.bdnc.blogsoon.controller;
 
 import br.edu.ifpb.bdnc.blogsoon.dao.UsuarioDAOIF;
-import org.springframework.beans.factory.annotation.Autowired;
+import br.edu.ifpb.bdnc.blogsoon.entidades.Usuario;
+import javax.inject.Inject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,23 +22,23 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @Controller
 @SessionAttributes("usuario")
 public class UsuarioController {
-    
+
     private UsuarioDAOIF UsuarioDAO;
     
-    @Autowired
+    @Inject
     public UsuarioController(UsuarioDAOIF usuarioDAO){
         this.UsuarioDAO=usuarioDAO;
     }
     
     @ModelAttribute("usuario")
-    String teste(@RequestParam(required = false) String tese){
+    String teste(@RequestParam String tese){
         return tese;
     }
     
     @RequestMapping({"/login","/"})
-    public @ResponseBody String login(@ModelAttribute("usuario") String tese){
-                
-        return "teste  "+ tese;
+    public  String login(@ModelAttribute("usuario") String tese){
+        Usuario usuario=new Usuario();
+        return "teste  ";
     }
     
     @RequestMapping("/cadastro")
