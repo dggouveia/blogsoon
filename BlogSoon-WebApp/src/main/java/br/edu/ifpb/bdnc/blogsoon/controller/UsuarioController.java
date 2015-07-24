@@ -10,7 +10,6 @@ import br.edu.ifpb.bdnc.blogsoon.entidades.Usuario;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author Emanuel Batista da Silva Filho - emanuelbatista2011@gmail.com
  */
 @Controller
-
+@RequestMapping("/usuario")
 public class UsuarioController {
 
     @Autowired
@@ -32,13 +31,13 @@ public class UsuarioController {
         return new Usuario();
     }
 
-    @RequestMapping({"/login", "/"})
+    @RequestMapping("/login")
     public String login() {
 
         return "index";
     }
     
-    @RequestMapping(value = "/cadastro")
+    @RequestMapping("/cadastro")
     public String cadastro(@Valid Usuario usuario, BindingResult result) {
         if (result.hasErrors()) {
             return "index";
