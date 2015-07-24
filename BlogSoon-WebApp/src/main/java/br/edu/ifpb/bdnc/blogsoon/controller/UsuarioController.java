@@ -5,46 +5,45 @@
  */
 package br.edu.ifpb.bdnc.blogsoon.controller;
 
-import br.edu.ifpb.bdnc.blogsoon.dao.UsuarioDAOIF;
+import br.edu.ifpb.bdnc.blogsoon.dao.UsuarioRepository;
 import br.edu.ifpb.bdnc.blogsoon.entidades.Usuario;
-import javax.inject.Inject;
+import javax.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 /**
  *
  * @author Emanuel Batista da Silva Filho - emanuelbatista2011@gmail.com
  */
 @Controller
-@SessionAttributes("usuario")
+
 public class UsuarioController {
 
-    private UsuarioDAOIF UsuarioDAO;
-    
-    @Inject
-    public UsuarioController(UsuarioDAOIF usuarioDAO){
-        this.UsuarioDAO=usuarioDAO;
-    }
-    
+    @Autowired
+    private UsuarioRepository UsuarioDAO;
+
+
     @ModelAttribute("usuario")
-    String teste(@RequestParam String tese){
-        return tese;
+    public Usuario criarUsuario() {
+        return new Usuario();
+    }
+
+    @RequestMapping({"/login", "/"})
+    public String login() {
+
+        return "index";
     }
     
-    @RequestMapping({"/login","/"})
-    public  String login(@ModelAttribute("usuario") String tese){
-        Usuario usuario=new Usuario();
-        return "teste  ";
+    @RequestMapping(value = "/cadastro")
+    public String cadastro(@Valid Usuario usuario, BindingResult result) {
+        if (result.hasErrors()) {
+            return "index";
+        }
+        return "index";
     }
-    
-    @RequestMapping("/cadastro")
-    public @ResponseBody String cadastro(){
-        return "";
-    }
-    
-    
+
 }

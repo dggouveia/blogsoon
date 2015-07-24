@@ -5,8 +5,7 @@
  */
 package br.edu.ifpb.bdnc.blogsoon;
 import br.edu.ifpb.bdnc.blogsoon.entidades.Usuario;
-import br.edu.ifpb.bdnc.blogsoon.entidades.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.inject.Inject;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,11 +14,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author Emanuel Batista da Silva Filho - emanuelbatista2011@gmail.com
  */
+
+
+/**
+ *
+ * @author Emanuel Batista da Silva Filho - emanuelbatista2011@gmail.com
+ */
 @SpringBootApplication
 public class Main implements CommandLineRunner{
     
-    @Autowired
-    UsuarioRepository usuarioRepository;
+    @Inject
+    br.edu.ifpb.bdnc.blogsoon.dao.UsuarioRepository usuarioRepository;
     
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);

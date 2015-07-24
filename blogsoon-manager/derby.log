@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Wed Jul 22 13:51:07 BRT 2015:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-014e-b6ac-ff76-00000c23c190 
+Fri Jul 24 08:04:35 BRT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-014e-bfbc-7176-0000084d37e0 
 on database directory memory:/home/emanuel/NetBeansProjects/blogsoon/blogsoon-manager/testdb with class loader sun.misc.Launcher$AppClassLoader@c387f44 
 Loaded from file:/home/emanuel/.m2/repository/org/apache/derby/derby/10.10.2.0/derby-10.10.2.0.jar
 java.vendor=Oracle Corporation
