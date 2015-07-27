@@ -4,34 +4,37 @@
  * and open the template in the editor.
  */
 package br.edu.ifpb.bdnc.blogsoon;
+
+import br.edu.ifpb.bdnc.blogsoon.entidades.AppConfig;
 import br.edu.ifpb.bdnc.blogsoon.entidades.Usuario;
 import br.edu.ifpb.bdnc.blogsoon.entidades.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Configuration;
 
 /**
  *
  * @author Emanuel Batista da Silva Filho - emanuelbatista2011@gmail.com
  */
+@Configuration
+@EnableAutoConfiguration
 @SpringBootApplication
 public class Main implements CommandLineRunner{
-    
-    @Autowired
-    UsuarioRepository usuarioRepository;
-    
     public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
+        SpringApplication.run(AppConfig.class, args);
     }
 
+    @Autowired
+    UsuarioRepository UsuarioRepository;
+    
     @Override
     public void run(String... strings) throws Exception {
-        Usuario usuario=new Usuario();
-        usuario.setNome("sdsd");
-        usuario.setLogin("sds");
-        usuario.setSobrenome("sds");
-        usuario.setSenha("sdd");
-        System.out.println(usuarioRepository.save(usuario));
+        UsuarioRepository.save(new Usuario());
+        
     }
+    
+    
 }

@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import org.hibernate.validator.constraints.NotEmpty;
+//import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -22,13 +22,32 @@ public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @NotEmpty(message = "O nome está vazio")
+//    @NotEmpty(message = "O nome está vazio")
     private String nome;
     private String sobrenome;
-    @NotEmpty(message = "O login está vazio")
+//    @NotEmpty(message = "O login está vazio")
     private String login;
-    @NotEmpty(message = "A senha está vazia")
+//    @NotEmpty(message = "A senha está vazia")
     private String senha; 
+
+    public Usuario() {
+    }
+
+    public Usuario(String nome, String sobrenome, String login, String senha) {
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.login = login;
+        this.senha = senha;
+    }
+
+    public Usuario(long id, String nome, String sobrenome, String login, String senha) {
+        this.id = id;
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.login = login;
+        this.senha = senha;
+    }
+    
     
  
     
